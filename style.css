@@ -52,27 +52,33 @@ nav button {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 0px 35px;
+  padding: 0px 5vw;
+  text-align: center;
 }
 .description > :first-child {
   font-weight: 900;
-  font-size: 53px;
+  font-size: clamp(2rem, 8vw, 3.3rem);
   text-align: center;
+  line-height: 1.2;
+  margin-top: 0;
 }
 .description > :nth-child(2) {
   font-weight: 900;
-  font-size: 53px;
-  margin-top: -23px;
+  font-size: clamp(2rem, 8vw, 3.3rem);
+  line-height: 1.2;
+  margin-top: 0;
   text-align: center;
 }
 .description > :nth-child(3) {
   font-weight: 600;
-  font-size: 20px;
+  font-size: clamp(1rem, 3vw, 1.25rem);
+  margin-top: 1rem;
   text-align: center;
 }
 .description > :nth-child(4) {
   font-weight: 400;
-  font-size: 16px;
+  font-size: clamp(0.8rem, 2.5vw, 1rem);
+   margin-top: 0.5rem;
   text-align: center;
 }
 .separation {
@@ -87,19 +93,7 @@ nav button {
     rgba(33, 13, 22, 1) 84%
   );
   position: relative;
-  /* position: absolute;
-  border-radius: inherit;
-  bottom: 0;
-  width: 100%;
-  background: linear-gradient(to right, rgba(33, 13, 22, 1) 16%, rgba(184, 40, 105, 1), rgba(229, 9, 20, 1), rgba(184, 40, 105, 1), rgba(33, 13, 22, 1) 84%);
-  height: 100px;
-  border: solid .25rem transparent;
-  border-top-left-radius: 50% 100%;
-  border-top-right-radius: 50% 100%;
   z-index: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center; */
 }
 .btn {
   color: white;
@@ -115,21 +109,23 @@ nav button {
 .btn-red {
   background-color: red;
   border: 0px solid transparent;
-  padding: 12px 24px;
-  font-size: 24px;
-  line-height: 24px;
+  padding: 0.75rem 1.5rem;
+  font-size: clamp(1rem, 4vw, 1.5rem);
+  line-height: 1;
   color: white;
   font-weight: bold;
   cursor: pointer;
+  white-space: nowrap;
 }
 .main input {
   border: 1px solid white;
-  width: 350px;
-  padding: 5px 24px;
-  font-size: 15px;
+  max-width: 350px;
+  width: 80%;
+  padding: 0.5rem 1rem;
+  font-size: clamp(0.9rem, 3vw, 1rem);
   border-radius: 0.25rem;
   background-color: #090909db;
-  line-height: 36px;
+  line-height: 1.5;
   color: white;
   font-weight: 400;
 }
@@ -137,24 +133,26 @@ nav button {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 0.5rem;
+  margin-top: 1rem;
 }
 .carousel {
   display: flex;
-  gap: 45px;
+  gap: 1.5rem;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   padding-bottom: 10px;
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none;
-  margin-left: 216px;
+  margin: 10px 12vw 0;
+  /* margin-left: 216px;
   margin-right: 190px;
-  padding-top: 10px;
+  padding-top: 10px; */
 }
 .card {
   flex: 0 0 auto;
-  width: 180px;
+  width: clamp(120px, 30vw, 180px);
   scroll-snap-align: start;
   position: relative;
   /* overflow: hidden; */
@@ -176,20 +174,20 @@ nav button {
   font-weight: 900;
   left: -10px;
   bottom: -28px;
-  font-size: 95px;
+  font-size: clamp(4rem, 15vw, 6rem);
   -webkit-text-stroke: 2px rgb(255, 255, 255);
   text-shadow: 19px 20px 3rem rgba(0, 0, 0, 0.5);
 }
 .carousel-wrapper {
-  padding: 20px;
+  padding: 1rem;
   color: white;
 }
 .carousel-wrapper h2 {
-  font-size: 24px;
-  margin-bottom: 10px;
-  margin-top: 10px;
+  font-size: clamp(1.2rem, 4vw, 1.5rem);
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
   font-weight: bold;
-  margin-left: 185px;
+  margin-left: 5vw;
 }
 .carousel::-webkit-scrollbar {
   display: none; /* Chrome, Safari */
@@ -198,11 +196,13 @@ nav button {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 
-  /* gap: 1.5rem; */
-  height: 18rem;
-  /* width: 18rem; */
-  max-width: 100%;
-  margin: 0 175px auto;
+  gap: 1rem;
+  min-height: 18rem;
+  max-width: 90vw;
+  margin: 0 auto;
+  
+  
+  padding: 1rem 0;
 }
 .feature-card {
   background-color: #f9f9f9;
@@ -211,41 +211,48 @@ nav button {
   position: relative;
   padding: 1rem;
   background: linear-gradient(149deg, #192247 0%, #210e17 96.86%);
-  margin-left: 20px;
+  margin-left: 0;
 }
 .feature-card img {
   position: absolute;
   right: 10px;
   bottom: 10px;
+  max-width: 80px;
+  height: auto;
 }
 .feature-card h3 {
-  margin: 1rem 0rem 0rem;
+  margin: 1rem 0 0;
   line-height: 1.5;
+  font-size: clamp(1.1rem, 3.5vw, 1.3rem);
 }
 .feature-card p {
   line-height: 1.5;
   color: rgba(255, 255, 255, 0.7);
-  margin: 0.6rem 0rem 0rem;
+  margin: 0.6rem 0 0;
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
 }
 .features-section h2 {
   color: white;
-  margin-left: 200px;
+  margin-left: 5vw;
+  font-size: clamp(1.2rem, 4vw, 1.5rem); /* Responsive font size */
+    margin-bottom: 1rem;
 }
 .faqbox {
   display: flex;
   background-color: rgb(45, 45, 45);
-  padding: 26px;
+  padding: 1.5rem;
   align-items: center;
   justify-content: space-between;
   cursor: pointer;
+  font-size: clamp(1rem, 3.5vw, 1.25rem);
 }
 .faq {
-  padding: 80px 165px 0px 190px;
+  padding: 2.5rem 5vw 0;
   background: black;
   color: white;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 0.625rem;
 }
 .faqbox:hover {
   background-color: rgb(70, 70, 70);
@@ -255,25 +262,108 @@ nav button {
 }
 footer{
   color: white;
-  max-width: 60vw;
+  max-width: 90vw;
   margin: auto;
-  padding: 35px;
+  padding: 1.5rem;
 }
 footer .questions{
-  padding: 30px 0;
+  padding: 1.5rem 0;
 }
 .footer a{
-  font-size: 14px;
+  font-size: clamp(0.75rem, 2.5vw, 0.9rem);
   color: white;
 }
 .footer{
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1.5rem;
   color: white;
 }
 .footer-items{
   display: flex;
   flex-direction: column;
-  gap: 23px;
+  gap: 1rempx;
 }
+@media(max-width: 768px) {
+  .main nav {
+    flex-direction: column;
+    height: auto;
+    padding: 10px 0;
+  }
+  .main img {
+        width: 120px; /* Slightly smaller logo */
+        margin-bottom: 10px;
+    }
+    .description-input {
+        flex-direction: column; /* Stack input and button */
+        gap: 10px;
+    }
+    .main input {
+        width: 90%; /* Wider input on smaller screens */
+        max-width: none; /* Remove max-width for full flexibility */
+    }
 
+    .btn-red {
+        width: 90%; /* Make button full width */
+        text-align: center;
+    }
+    .carousel {
+        margin: 10px 2vw 0; /* Smaller horizontal margin */
+        gap: 1rem; /* Smaller gap */
+    }
+    .card {
+        width: clamp(100px, 40vw, 150px); /* Adjust card width */
+    }
+
+    .carousel-wrapper h2,
+    .features-section h2 {
+        margin-left: 2vw; /* Smaller left margin */
+    }
+
+    .features-grid {
+        margin: 0 2vw auto; /* Smaller horizontal margin */
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjust min card width */
+    }
+
+    .faq {
+        padding: 2rem 2vw 0; /* Smaller padding */
+    }
+
+    .footer {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Adjust footer columns */
+        gap: 1rem; /* Smaller gap */
+    }
+    /* For screens smaller than 480px (common mobile breakpoint) */
+@media (max-width: 480px) {
+    .description > :first-child,
+    .description > :nth-child(2) {
+        font-size: clamp(1.8rem, 10vw, 2.5rem); /* Even smaller font size */
+    }
+
+    .description > :nth-child(3) {
+        font-size: clamp(0.9rem, 4vw, 1.1rem);
+    }
+
+    .description > :nth-child(4) {
+        font-size: clamp(0.7rem, 3.5vw, 0.9rem);
+    }
+
+    .main input {
+        width: 95%; /* Even wider input */
+    }
+
+    .btn-red {
+        padding: 0.5rem 1rem; /* Smaller button padding */
+        font-size: clamp(0.9rem, 4vw, 1.2rem);
+    }
+
+    .card {
+        width: clamp(90px, 45vw, 120px); /* Adjust card width for very small screens */
+    }
+
+    .faqbox {
+        padding: 1rem; /* Smaller padding for FAQ box */
+        font-size: clamp(0.9rem, 4vw, 1.1rem);
+    }
+}
+}
